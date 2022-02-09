@@ -16,7 +16,7 @@ $$= \frac{1 - r^{n+2}}{1-r}.$$
 The second formula can then be proven with the first one like this. 
 $$\sum_{k=0}^{\infty}r^k=\lim_{n\rightarrow \infty}\sum_{k=0}^{n}r^k = \lim_{n\rightarrow \infty} \frac{1-r^{n+1}}{1-r} = \frac{1-\lim_{n\rightarrow \infty} r^{n+1}}{1-r} \overset{|r|<1}{=} \frac{1}{1-r}$$
 
-# Anwendung
+# Application
 
 The formula that was covered in Math Club was the following $$\sum_{k=1}^{N}\sin(x + \frac{2k}{N}\pi)=0$$ 
 We approached the proof first from an induction way of thinking, but that didn't really work out. I then came up with a way of proving it using the formula that I had proven in math class. For that, you have to transform the equation a bit.
