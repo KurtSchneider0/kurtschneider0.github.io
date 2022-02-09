@@ -1,0 +1,30 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.83.1'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: public # The folder the action should deploy.

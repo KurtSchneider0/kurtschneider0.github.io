@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>My internship at superluminar - Kurt Schneider</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A post about my internship at superluminar. I go over the technologies I learned and used." />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="My internship at superluminar" />
+<meta property="og:description" content="A post about my internship at superluminar. I go over the technologies I learned and used." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kurtschneider0.github.io/posts/internship/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-28T17:30:13+01:00" />
+<meta property="article:modified_time" content="2022-01-28T17:30:13+01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My internship at superluminar"/>
+<meta name="twitter:description" content="A post about my internship at superluminar. I go over the technologies I learned and used."/>
+<script src="https://kurtschneider0.github.io/js/feather.min.js"></script>
+	
+	
+        <link href="https://kurtschneider0.github.io/css/fonts.7fa06c2792c8589768ffcdaf014e4bfc7f2ccbfba059f8e87131158970c23ed3.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://kurtschneider0.github.io/css/main.245cf2f4cbf86306cf2b642c640297777accf92ca33bea899d87920b0dad063d.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://kurtschneider0.github.io/css/dark.c95c5dcf5f32f8b67bd36f7dab66680e068fce2b303087294114aabf7a7c080b.css" media="(prefers-color-scheme: dark)"  />
+	
+	
+	
+
+
+
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://kurtschneider0.github.io/">Kurt Schneider</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">My internship at superluminar</h1>
+			<div class="meta">Posted on Jan 28, 2022</div>
+		</div>
+		
+
+		<section class="body">
+			<h1 id="first-day">First day</h1>
+<h2 id="first-meeting">First meeting</h2>
+<p>Me and Becky first met at 8am to plan the rest of the day. I already had a lot of the programs I needed installed, so that part didn&rsquo;t take long. The plan was for me to set up my own blog site using a framework called Hugo and summarize my first day as a blog. When I&rsquo;m done with that, I could move on to React.js.</p>
+<h2 id="hugo">Hugo</h2>
+<p>When we were done with the meeting, I started with Hugo. I used a <a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7">Guide</a> to learn how to work with Hugo. Hugo can be installed easily with the package manager Chocolatey. You can create a website with a few commands using a template of choice. This website can be further configured in config.toml. There you define things like the author, description and others. This website can then be hosted on a local server or on e.g. Github Pages. When hosting on Github Pages I had a bug where the CSS was not imported correctly. However, we discussed this in the second meeting and fixed it later by changing the path for importing the CSS.
+After that everything worked fine.</p>
+<h2 id="react">React</h2>
+<p>When I was done with Hugo and had the website up and running, I moved on to React.js. React.js is a component-based javascript front-end library. React makes it easier to build user interfaces.</p>
+<p>To get familiar with React I first followed the <a href="https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment">Tutorial</a>. In this tutorial you create Tic-Tac-Toe. I followed the tutorial and wrote the following code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Square</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;square&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onClick</span>}&gt;
+      {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">value</span>}
+    &lt;/<span style="color:#f92672">button</span>&gt;
+  );
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Board</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">renderSquare</span>(<span style="color:#a6e22e">i</span>) {
+    <span style="color:#66d9ef">return</span> (
+      &lt;<span style="color:#f92672">Square</span>
+        <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">i</span>]}
+        <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">onClick</span>(<span style="color:#a6e22e">i</span>)}
+      /&gt;
+    );
+  }
+
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;board-row&#34;</span>&gt;
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">0</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">1</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">2</span>)}
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;board-row&#34;</span>&gt;
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">3</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">4</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">5</span>)}
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;board-row&#34;</span>&gt;
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">6</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">7</span>)}
+          {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">renderSquare</span>(<span style="color:#ae81ff">8</span>)}
+        &lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    );
+  }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Game</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">history</span><span style="color:#f92672">:</span> [
+        {
+          <span style="color:#a6e22e">squares</span><span style="color:#f92672">:</span> Array(<span style="color:#ae81ff">9</span>).<span style="color:#a6e22e">fill</span>(<span style="color:#66d9ef">null</span>),
+        },
+      ],
+      <span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+      <span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+    };
+  }
+
+  <span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">i</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">history</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">stepNumber</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>[<span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">squares</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>.<span style="color:#a6e22e">slice</span>();
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">calculateWinner</span>(<span style="color:#a6e22e">squares</span>) <span style="color:#f92672">||</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">i</span>]) {
+      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">xIsNext</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;X&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;O&#34;</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">history</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">concat</span>([
+        {
+          <span style="color:#a6e22e">squares</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">squares</span>,
+        },
+      ]),
+      <span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">length</span>,
+      <span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">:</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">xIsNext</span>,
+    });
+  }
+
+  <span style="color:#a6e22e">jumpTo</span>(<span style="color:#a6e22e">step</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">stepNumber</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">step</span>,
+      <span style="color:#a6e22e">xIsNext</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">step</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>,
+    });
+  }
+
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">history</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">history</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">stepNumber</span>];
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">winner</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">calculateWinner</span>(<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>);
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">moves</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">history</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">step</span>, <span style="color:#a6e22e">move</span>) =&gt; {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">desc</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">move</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;Go to move #&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">move</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Go to game start&#34;</span>;
+      <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">move</span>}&gt;
+          &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{() =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">jumpTo</span>(<span style="color:#a6e22e">move</span>)}&gt;{<span style="color:#a6e22e">desc</span>}&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+      );
+    });
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">status</span>;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">winner</span>) {
+      <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Winner: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">winner</span>;
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Next player: &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">xIsNext</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;X&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;O&#34;</span>);
+    }
+
+    <span style="color:#66d9ef">return</span> (
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game-board&#34;</span>&gt;
+          &lt;<span style="color:#f92672">Board</span>
+            <span style="color:#a6e22e">squares</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">squares</span>}
+            <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{(<span style="color:#a6e22e">i</span>) =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleClick</span>(<span style="color:#a6e22e">i</span>)}
+          /&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game-info&#34;</span>&gt;
+          &lt;<span style="color:#f92672">div</span>&gt;{<span style="color:#a6e22e">status</span>}&lt;/<span style="color:#f92672">div</span>&gt;
+          &lt;<span style="color:#f92672">ol</span>&gt;{<span style="color:#a6e22e">moves</span>}&lt;/<span style="color:#f92672">ol</span>&gt;
+        &lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    );
+  }
+}
+
+<span style="color:#75715e">// ========================================
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Game</span> /&gt;, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>));
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculateWinner</span>(<span style="color:#a6e22e">squares</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lines</span> <span style="color:#f92672">=</span> [
+    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>],
+    [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>],
+    [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>],
+    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>],
+    [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>],
+    [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>],
+    [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>],
+    [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>],
+  ];
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">lines</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">lines</span>[<span style="color:#a6e22e">i</span>];
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">b</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">c</span>]) {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">squares</span>[<span style="color:#a6e22e">a</span>];
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+}
+</code></pre></div><h1 id="second-day">Second day</h1>
+<h2 id="github-actions">Github Actions</h2>
+<p>First, I learned what <a href="https://www.plainconcepts.com/what-is-github-actions/">GitHub Actions</a> is and then automated the build and deploy process with Github Actions using a <a href="https://dev.to/importhuman/deploy-hugo-website-using-github-pages-1mc5">Guide</a> for the website I created with Hugo. However, I ran into a few problems with that and continued with React for now, but I still tried a simpler workflow that outputs something to the terminal on a push.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">CI</span>
+
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">main]</span>
+  <span style="color:#f92672">pull_request</span>:
+    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">main]</span>
+  <span style="color:#f92672">workflow_dispatch</span>:
+
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">build</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Run a one-line script</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo Hello, world!</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Run a multi-line script</span>
+        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          echo Add other actions to build,
+</span><span style="color:#e6db74">          echo test, and deploy your project.</span>          
+</code></pre></div><h2 id="react-1">React</h2>
+<p>I then expanded my React knowledge a bit and tried Forms, programmed a todo list and read data from an <a href="https://randomuser.me/">API</a> with React. The source code for this is on my <a href="https://github.com/KurtSchneider0/ReactjsTests">GitHub</a>.</p>
+<h1 id="third-day">Third day</h1>
+<h2 id="graphql">GraphQL</h2>
+<h3 id="http-and-apis">HTTP and APIs</h3>
+<p>First, I took another look at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">HTTP Requests</a>, <a href="https://zapier.com/learn/apis/">APIs</a>, and <a href="https://www.redhat.com/en/topics/api/what-is-a-rest-api">REST APIs</a>.</p>
+<h3 id="graphql-1">GraphQL</h3>
+<p>After that I went through a <a href="https://www.howtographql.com/">GraphQL Basics Tutorial</a>. With this knowledge I then worked on a <a href="https://www.howtographql.com/react-apollo/0-introduction/">Fullstack GraphQL Tutorial</a> where I reprogrammed a <a href="https://news.ycombinator.com/">Hackernews</a> clone (<a href="https://github.com/KurtSchneider0/Hackernews-React-Apollo">GitHub Repository</a>).
+However, I had a bug with node and stopped a bit programming on that project.</p>
+<h2 id="nasa-api">NASA API</h2>
+<p>When I was looking into APIs, I also came across the <a href="https://api.nasa.gov/">NASA API</a>. I then used the API to make a small <a href="https://kurtschneider0.github.io/nasa-api/">website</a> that outputs the photo of the day, 5 asteroids near Earth, and 5 photos of the Mars rovers (<a href="https://github.com/KurtSchneider0/nasa-api">GitHub Repository</a>).</p>
+<h1 id="fourth-day">Fourth day</h1>
+<h2 id="github-actions-1">GitHub Actions</h2>
+<h3 id="blog-website">Blog website</h3>
+<p>The first thing I did was to continue working with GitHub Actions. So I tried again to set up a workflow for the blog site and this time I was able to do it. This is the .yml file for the workflow.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">github pages</span>
+
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>:
+      - <span style="color:#ae81ff">main</span>
+  <span style="color:#f92672">pull_request</span>:
+
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">deploy</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-18.04</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">submodules</span>: <span style="color:#66d9ef">true</span>
+          <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">hugo-version</span>: <span style="color:#e6db74">&#34;0.83.1&#34;</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo --minify</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy 🚀</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">JamesIves/github-pages-deploy-action@4.1.3</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">branch</span>: <span style="color:#ae81ff">gh-pages</span>
+          <span style="color:#f92672">folder</span>: <span style="color:#ae81ff">public</span>
+</code></pre></div><p>Dieser Workflow baut die Website mit &lsquo;hugo &ndash;minify&rsquo; und deployt dann die in <code>./public</code> gebaute Website zu GitHub Pages.</p>
+<h3 id="nasa-api-1">NASA API</h3>
+<p>This workflow builds the website with &lsquo;hugo &ndash;minify&rsquo; and then deploys the website built in <code>./public</code> to GitHub Pages.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy React Application</span>
+
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">main]</span>
+  <span style="color:#f92672">pull_request</span>:
+    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">main]</span>
+
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">build_test</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+
+    <span style="color:#f92672">strategy</span>:
+      <span style="color:#f92672">matrix</span>:
+        <span style="color:#f92672">node-version</span>: [<span style="color:#ae81ff">12.</span><span style="color:#ae81ff">x]</span>
+
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Use Node.js ${{ matrix.node-version }}</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-node@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">node-version</span>: <span style="color:#ae81ff">${{ matrix.node-version }}</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">npm ci, build and test</span>
+        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          npm ci
+</span><span style="color:#e6db74">          npm run build --if-present
+</span><span style="color:#e6db74">          npm test</span>          
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">deploy to gh-pages</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v3</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">deploy_key</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+          <span style="color:#f92672">publish_dir</span>: <span style="color:#ae81ff">./build</span>
+</code></pre></div><p>The workflow simply builds the React project and then lets you host the built website from the <code>./build</code> folder via GitHub Pages.</p>
+<h2 id="cloud-computing">Cloud Computing</h2>
+<p>I also had a quick read through what <a href="https://aws.amazon.com/de/what-is-cloud-computing">cloud computing</a> to prepare for the next day.</p>
+<h2 id="graphql-2">GraphQL</h2>
+<p>I then also fixed the GraphQL bug by using a different node version to start the server. I have then completed half of the GraphQL tutorial.</p>
+<h1 id="fifth-day">Fifth day</h1>
+<h2 id="aws">AWS</h2>
+<p>First, I watched an introduction to the AWS Cloud. Then I watched two short tutorials from AWS&rsquo;s Getting Started page. The first one involved creating a <a href="https://aws.amazon.com/de/getting-started/hands-on/run-serverless-code/">Lambda Function</a> to run a serverless &ldquo;Hello World&rdquo; program. The second one has <a href="https://aws.amazon.com/de/getting-started/hands-on/detect-analyze-compare-faces-rekognition">Face Rekognition</a> to analyze and compare faces.</p>
+<h2 id="graphql-3">GraphQL</h2>
+<p>I also finished the Hackernews clone after that (<a href="https://github.com/KurtSchneider0/Hackernews-React-Apollo">GitHub repository</a>).</p>
+<h2 id="retrospective">Retrospective</h2>
+<p>I was also briefly present at a retrospective today, where I also briefly introduced myself to the other employees.</p>
+<h1 id="sixth-day">Sixth day</h1>
+<h2 id="cloudformation">Cloudformation</h2>
+<p>First, I briefly reviewed <a href="https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac#overview">IaC</a>. Then I looked into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html">Cloudformation</a> and did a <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html">workshop</a> on it. Cloudformation is a way to use yml templates to configure stacks that then contain multiple AWS services. This is a simple Cloudformation template that creates and configures a stack with an S3 bucket.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">AWSTemplateFormatVersion</span>: <span style="color:#e6db74">&#34;2010-09-09&#34;</span>
+
+<span style="color:#f92672">Description</span>: <span style="color:#ae81ff">AWS CloudFormation workshop</span>
+
+<span style="color:#f92672">Resources</span>:
+  <span style="color:#f92672">S3Bucket</span>:
+    <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::S3::Bucket</span>
+    <span style="color:#f92672">Properties</span>:
+      <span style="color:#f92672">VersioningConfiguration</span>:
+        <span style="color:#f92672">Status</span>: <span style="color:#ae81ff">Enabled</span>
+      <span style="color:#f92672">BucketEncryption</span>:
+        <span style="color:#f92672">ServerSideEncryptionConfiguration</span>:
+          - <span style="color:#f92672">ServerSideEncryptionByDefault</span>:
+              <span style="color:#f92672">SSEAlgorithm</span>: <span style="color:#ae81ff">AES256</span>
+</code></pre></div><h1 id="seventh-day">Seventh day</h1>
+<h2 id="aws-cdk">AWS CDK</h2>
+<p>Then I did some quick research on what <a href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">AWS CDK</a> is. AWS CDK is a way to configure similar to stacks. However, for CDK you use programming languages like TypeScript, where the code is turned into a cloudformation template that is then deployed.</p>
+<p>A simple stack with CDK TypeScript can look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">cdk</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-cdk-lib&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">lambda</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-cdk-lib/aws-lambda&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">apigw</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;aws-cdk-lib/aws-apigateway&#34;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CdkWorkshopStack</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">cdk</span>.<span style="color:#a6e22e">Stack</span> {
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">scope</span>: <span style="color:#66d9ef">cdk.App</span>, <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">props?</span>: <span style="color:#66d9ef">cdk.StackProps</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hello</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">lambda</span>.Function(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#34;HelloHandler&#34;</span>, {
+      <span style="color:#a6e22e">runtime</span>: <span style="color:#66d9ef">lambda.Runtime.NODEJS_14_X</span>,
+      <span style="color:#a6e22e">code</span>: <span style="color:#66d9ef">lambda.Code.fromAsset</span>(<span style="color:#e6db74">&#34;lambda&#34;</span>),
+      <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hello.handler&#34;</span>,
+    });
+
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">apigw</span>.<span style="color:#a6e22e">LambdaRestApi</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#34;Endpoint&#34;</span>, {
+      <span style="color:#a6e22e">handler</span>: <span style="color:#66d9ef">hello</span>,
+    });
+  }
+}
+</code></pre></div><p>And the lambda function referenced in the code may look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">event</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;request:&#34;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">event</span>, <span style="color:#66d9ef">undefined</span>, <span style="color:#ae81ff">2</span>));
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">statusCode</span>: <span style="color:#66d9ef">200</span>,
+    <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;text/plain&#34;</span> },
+    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Hello, CDK! You&#39;ve hit &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;.</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#e6db74">n`</span>,
+  };
+};
+</code></pre></div><p>The stack in the example would create a new lambda function that outputs &ldquo;Hello, CDK! You&rsquo;ve hit&rdquo; + the addressed endpoint. Then an API gateway is defined so that the Lambda function is executed when an endpoint of that API is accessed. The stack can now be easily deployed with &lsquo;cdk deploy&rsquo;.
+<img src="../../images/internship/simpleapi.png" alt="Illustration"></p>
+<h1 id="eighth-day">Eighth day</h1>
+<h2 id="serverless">Serverless</h2>
+<p>Today I have looked at <a href="https://aws.amazon.com/de/lambda/serverless-architectures-learn-more/">Serverless</a>. For this, I first looked at various explanations such as on <a href="https://serverlessland.com/learn">Serverlessland</a>. To summarize, Servless means that applications automatically scale and add capacity on demand. This allows one to focus more on buisness logic.</p>
+<p>I then started using the <a href="https://superluminar-io.github.io/serverless-workshop/">Serverless Workshop</a>.</p>
+<h2 id="graphql-4">GraphQL</h2>
+<p>In the GraphQL Hackernews clone, I imported the server with schema and database, so I wanted to briefly try making my own little GraphQL server with <a href="https://www.apollographql.com/">Apollo</a> and <a href="https://www.prisma.io/">Prisma</a>. I decided to make a small API that allows you to create and retrieve notes, which are then stored in a database. The scheme for this is very simple.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Query</span> {
+  getNote(id: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">Note</span>!
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Note</span> {
+  id: <span style="color:#a6e22e">ID</span>!
+  name: <span style="color:#a6e22e">String</span>!
+  content: <span style="color:#a6e22e">String</span>!
+  author: <span style="color:#a6e22e">String</span>!
+}
+
+<span style="color:#66d9ef">input</span> <span style="color:#a6e22e">newNoteInput</span> {
+  name: <span style="color:#a6e22e">String</span>!
+  content: <span style="color:#a6e22e">String</span>!
+  author: <span style="color:#a6e22e">String</span>!
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mutation</span> {
+  newNote(newNoteInput: <span style="color:#a6e22e">newNoteInput</span>!): <span style="color:#a6e22e">Note</span>!
+}
+</code></pre></div><p>The resolvers are self-explanatory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">getNote</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">parent</span>, { <span style="color:#a6e22e">id</span> }, <span style="color:#a6e22e">context</span>) =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">notes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">prisma</span>.<span style="color:#a6e22e">note</span>.<span style="color:#a6e22e">findMany</span>();
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">notes</span>[<span style="color:#a6e22e">id</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newNote</span> <span style="color:#f92672">=</span> (
+  <span style="color:#a6e22e">parent</span>,
+  { <span style="color:#a6e22e">newNoteInput</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">content</span>, <span style="color:#a6e22e">author</span> } },
+  <span style="color:#a6e22e">context</span>
+) =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newNote</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">context</span>.<span style="color:#a6e22e">prisma</span>.<span style="color:#a6e22e">note</span>.<span style="color:#a6e22e">create</span>({
+    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">name</span>,
+      <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">content</span>,
+      <span style="color:#a6e22e">author</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">author</span>,
+    },
+  });
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">newNote</span>;
+};
+</code></pre></div><p>For the database I use Sqlite and Prisma. This is the <code>schema.prisma</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">datasource db {
+  provider = &#34;sqlite&#34;
+  url      = &#34;file:./dev.db&#34;
+}
+
+generator client {
+  provider = &#34;prisma-client-js&#34;
+}
+
+model Note {
+  id      Int    @id @default(autoincrement())
+  name    String
+  content String
+  author  String
+}
+</code></pre></div><h1 id="ninth-day">Ninth day</h1>
+<p>Today was also my first day in presence at superluminar.</p>
+<h2 id="serverless-1">Serverless</h2>
+<p>I have finished the Serverless Workshop. In the workshop they made a REST API where you can add and read notes stored in a DynamoDB database.
+<img src="../../images/internship/simpleapidatabase.png" alt="Illustration"></p>
+<h2 id="hugo-theme">Hugo Theme</h2>
+<p>I also made my own little Hugo theme (<a href="https://github.com/KurtSchneider0/colorful-theme">GitHub</a>).</p>
+<h2 id="graphql-appsync">GraphQL AppSync</h2>
+<p>After that I started an <a href="https://superluminar-io.github.io/serverless-graphql-workshop/#/">AppSync Workshop</a>. In which I create a GraphQL API in AWS.</p>
+<h1 id="tenth-day">Tenth day</h1>
+<h2 id="graphql-appsync-1">GraphQL AppSync</h2>
+<p>I have finished the GraphQL API from the workshop. One can use the API to create an article and write a comment. Articles can be written only if one has an account that is in the Blogger group on AWS Cognito. Comments are also checked for inappropriate emojis using the input checker. Articles and comments are also stored in DynamoDB databases.
+<img src="../../images/internship/graphqlblogapi.png" alt="Illustration"></p>
+<h2 id="final-project">Final project</h2>
+<p>I also thought about the project I want to do in the last week. For this I have read through parts of the documentation for CDK.</p>
+<h1 id="final-project-1">Final project</h1>
+<p>For the last week the plan was that I will work on a smaller project on my own based on what I already learned and research. I decided to create a notes GraphQL API using AppSync and using Amplify frontend, DynamoDB as database and Cognito for the login system. Amplify provides pre-built UI components that can interact with the API, which cann then also be used on a custom website. I wanted to do the infrastructure for this with CDK.</p>
+<p><img src="../../images/internship/finalproject.png" alt="Illustration"></p>
+<h2 id="cdk">CDK</h2>
+<p>The first two days I spent setting up everything except the frontend with CDK for which I defined the resources in <code>cdk-final-project-stack.ts</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">cdk</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@aws-cdk/core&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">cognito</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@aws-cdk/aws-cognito&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">appsync</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@aws-cdk/aws-appsync&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ddb</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@aws-cdk/aws-dynamodb&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">lambda</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;@aws-cdk/aws-lambda&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CdkFinalProjectStack</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">cdk</span>.<span style="color:#a6e22e">Stack</span> {
+  <span style="color:#66d9ef">constructor</span>(<span style="color:#a6e22e">scope</span>: <span style="color:#66d9ef">cdk.Construct</span>, <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">props?</span>: <span style="color:#66d9ef">cdk.StackProps</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">scope</span>, <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">props</span>);
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userPool</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">cognito</span>.<span style="color:#a6e22e">UserPool</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#39;notes-user-pool&#39;</span>, {
+      <span style="color:#a6e22e">selfSignUpEnabled</span>: <span style="color:#66d9ef">true</span>,
+      <span style="color:#a6e22e">accountRecovery</span>: <span style="color:#66d9ef">cognito.AccountRecovery.EMAIL_ONLY</span>,
+      <span style="color:#a6e22e">userVerification</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">emailStyle</span>: <span style="color:#66d9ef">cognito.VerificationEmailStyle.CODE</span>
+      },
+      <span style="color:#a6e22e">autoVerify</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">email</span>: <span style="color:#66d9ef">true</span>
+      },
+      <span style="color:#a6e22e">standardAttributes</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">email</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">required</span>: <span style="color:#66d9ef">true</span>,
+          <span style="color:#a6e22e">mutable</span>: <span style="color:#66d9ef">true</span>
+        }
+      }
+    })
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">userPoolClient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">cognito</span>.<span style="color:#a6e22e">UserPoolClient</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#34;notes-user-pool-client&#34;</span>, {
+      <span style="color:#a6e22e">userPool</span>
+    })
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">appsync</span>.<span style="color:#a6e22e">GraphqlApi</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#39;notes-api&#39;</span>, {
+      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;notes-api&#39;</span>,
+      <span style="color:#a6e22e">logConfig</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">fieldLogLevel</span>: <span style="color:#66d9ef">appsync.FieldLogLevel.ALL</span>,
+      },
+      <span style="color:#a6e22e">schema</span>: <span style="color:#66d9ef">appsync.Schema.fromAsset</span>(<span style="color:#e6db74">&#39;./graphql/schema.graphql&#39;</span>),
+      <span style="color:#a6e22e">authorizationConfig</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">defaultAuthorization</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">authorizationType</span>: <span style="color:#66d9ef">appsync.AuthorizationType.API_KEY</span>,
+          <span style="color:#a6e22e">apiKeyConfig</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">expires</span>: <span style="color:#66d9ef">cdk.Expiration.after</span>(<span style="color:#a6e22e">cdk</span>.<span style="color:#a6e22e">Duration</span>.<span style="color:#a6e22e">days</span>(<span style="color:#ae81ff">365</span>))
+          }
+        },
+        <span style="color:#a6e22e">additionalAuthorizationModes</span><span style="color:#f92672">:</span> [{
+          <span style="color:#a6e22e">authorizationType</span>: <span style="color:#66d9ef">appsync.AuthorizationType.USER_POOL</span>,
+          <span style="color:#a6e22e">userPoolConfig</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">userPool</span>,
+          }
+        }]
+      },
+    })
+    
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">notesLambda</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">lambda</span>.Function(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#34;lambdaId&#34;</span>, {
+      <span style="color:#a6e22e">runtime</span>: <span style="color:#66d9ef">lambda.Runtime.NODEJS_14_X</span>,
+      <span style="color:#a6e22e">code</span>: <span style="color:#66d9ef">lambda.Code.fromAsset</span>(<span style="color:#e6db74">&#39;lambda&#39;</span>),
+      <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;main.handler&#34;</span>,
+    })
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lambdaDs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">addLambdaDataSource</span>(<span style="color:#e6db74">&#39;notesLambdaDatasource&#39;</span>, <span style="color:#a6e22e">notesLambda</span>)
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">notesTable</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ddb</span>.<span style="color:#a6e22e">Table</span>(<span style="color:#66d9ef">this</span>, <span style="color:#e6db74">&#39;CDKNotesTable&#39;</span>, {
+      <span style="color:#a6e22e">billingMode</span>: <span style="color:#66d9ef">ddb.BillingMode.PAY_PER_REQUEST</span>,
+      <span style="color:#a6e22e">partitionKey</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;id&#39;</span>,
+        <span style="color:#66d9ef">type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ddb</span>.<span style="color:#a6e22e">AttributeType</span>.<span style="color:#a6e22e">STRING</span>,
+      },
+    })
+
+    <span style="color:#a6e22e">notesTable</span>.<span style="color:#a6e22e">grantFullAccess</span>(<span style="color:#a6e22e">notesLambda</span>)
+    <span style="color:#a6e22e">notesLambda</span>.<span style="color:#a6e22e">addEnvironment</span>(<span style="color:#e6db74">&#39;PRODUCT_TABLE&#39;</span>, <span style="color:#a6e22e">notesTable</span>.<span style="color:#a6e22e">tableName</span>)
+
+    <span style="color:#a6e22e">lambdaDs</span>.<span style="color:#a6e22e">createResolver</span>({
+      <span style="color:#a6e22e">typeName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Query&#34;</span>,
+      <span style="color:#a6e22e">fieldName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;listNotes&#34;</span>
+    })
+    <span style="color:#a6e22e">lambdaDs</span>.<span style="color:#a6e22e">createResolver</span>({
+      <span style="color:#a6e22e">typeName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Query&#34;</span>,
+      <span style="color:#a6e22e">fieldName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;getNote&#34;</span>
+    })
+
+    <span style="color:#a6e22e">lambdaDs</span>.<span style="color:#a6e22e">createResolver</span>({
+      <span style="color:#a6e22e">typeName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Mutation&#34;</span>,
+      <span style="color:#a6e22e">fieldName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;newNote&#34;</span>
+    })
+
+    <span style="color:#a6e22e">lambdaDs</span>.<span style="color:#a6e22e">createResolver</span>({
+      <span style="color:#a6e22e">typeName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Mutation&#34;</span>,
+      <span style="color:#a6e22e">fieldName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;deleteNote&#34;</span>
+    })
+  }
+}
+</code></pre></div><p>and then defined the GraphQL schema for AppSync in <code>schema.graphql</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Note</span> <span style="color:#a6e22e">@aws_api_key</span> <span style="color:#a6e22e">@aws_cognito_user_pools</span> {
+  id: <span style="color:#a6e22e">ID</span>!
+  name: <span style="color:#a6e22e">String</span>!
+  content: <span style="color:#a6e22e">String</span>!
+  author: <span style="color:#a6e22e">String</span>!
+}
+
+<span style="color:#66d9ef">input</span> <span style="color:#a6e22e">NoteInput</span> {
+  id: <span style="color:#a6e22e">ID</span>
+  name: <span style="color:#a6e22e">String</span>!
+  content: <span style="color:#a6e22e">String</span>!
+  author: <span style="color:#a6e22e">String</span>!
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Query</span> {
+  listNotes: [<span style="color:#a6e22e">Note</span>] <span style="color:#a6e22e">@aws_api_key</span> <span style="color:#a6e22e">@aws_cognito_user_pools</span>
+  getNote(id: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">Note</span>! <span style="color:#a6e22e">@aws_api_key</span> <span style="color:#a6e22e">@aws_cognito_user_pools</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mutation</span> {
+  newNote(note: <span style="color:#a6e22e">NoteInput</span>!): <span style="color:#a6e22e">Note</span>!
+    <span style="color:#a6e22e">@aws_cognito_user_pools</span>(cognito_groups: [<span style="color:#e6db74">&#34;Writer&#34;</span>])
+  <span style="color:#a6e22e">deleteNote</span>(id: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span> <span style="color:#a6e22e">@aws_cognito_user_pools</span>(cognito_groups: [<span style="color:#e6db74">&#34;Writer&#34;</span>])
+}
+</code></pre></div><p>Here I also define which mutations and queries can be used by which cognito groups. <!-- raw HTML omitted -->
+As a resolver I have then also used lambda functions an example for that would be this lambda function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AWS</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;aws-sdk&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ddbClient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AWS</span>.<span style="color:#a6e22e">DynamoDB</span>.<span style="color:#a6e22e">DocumentClient</span>()
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">v4</span>: <span style="color:#66d9ef">uuid</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;uuid&#39;</span>)
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Note</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;./Note&#39;</span>
+
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createNote</span>(<span style="color:#a6e22e">note</span>: <span style="color:#66d9ef">Note</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">note</span>.<span style="color:#a6e22e">id</span>) {
+    <span style="color:#a6e22e">note</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">uuid</span>()
+  }
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">paramaters</span> <span style="color:#f92672">=</span> {
+    <span style="color:#a6e22e">TableName</span>: <span style="color:#66d9ef">process.env.PRODUCT_TABLE</span>,
+    <span style="color:#a6e22e">Item</span>: <span style="color:#66d9ef">note</span>
+  }
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ddbClient</span>.<span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">paramaters</span>).<span style="color:#a6e22e">promise</span>()
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">note</span>
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Error: &#39;</span>, <span style="color:#a6e22e">error</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
+  }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">createNote</span>
+</code></pre></div><p>This Lambda function creates a note using the DynamoDB client that can access the database.</p>
+<h2 id="amplify">Amplify</h2>
+<p>Now the API, Database and Userpool works, but I need to program the frontend, because at the moment you can only interact with the API over the AWS Console.<!-- raw HTML omitted --> 
+To do that I create a react app using <code>npm create react-app frontend</code>. I&rsquo;m then configuring Amplify in <code>index.js</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">Amplify</span>.<span style="color:#a6e22e">configure</span>({
+    <span style="color:#a6e22e">Auth</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">region</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;eu-central-1&#39;</span>,
+        <span style="color:#a6e22e">userPoolId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">USERPOOLID</span>,
+        <span style="color:#a6e22e">userPoolWebClientId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">USERPOOLWEBCLIENTID</span>,
+        <span style="color:#a6e22e">mandatorySignIn</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+    }
+});
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myAppConfig</span> <span style="color:#f92672">=</span> {
+  <span style="color:#e6db74">&#39;aws_appsync_graphqlEndpoint&#39;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">AWS_APPSYNC_GRAPHQLENDPOINT</span>,
+  <span style="color:#e6db74">&#39;aws_appsync_region&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;eu-central-1&#39;</span>,
+  <span style="color:#e6db74">&#39;aws_appsync_authenticationType&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;AMAZON_COGNITO_USER_POOLS&#39;</span>,
+}
+</code></pre></div><p>You can now use the Amplify UI Components. For React, the one you use to make a login component looks like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+  <span style="color:#66d9ef">return</span> (
+    &lt;<span style="color:#f92672">Authenticator</span>&gt;
+      {({ <span style="color:#a6e22e">signOut</span>, <span style="color:#a6e22e">user</span> }) =&gt; (
+        &lt;<span style="color:#f92672">main</span>&gt;
+          &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Hello</span> {<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">username</span>}&lt;/<span style="color:#f92672">h1</span>&gt;
+          &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">signOut</span>}&gt;<span style="color:#a6e22e">Sign</span> <span style="color:#a6e22e">out</span>&lt;/<span style="color:#f92672">button</span>&gt;
+        &lt;/<span style="color:#f92672">main</span>&gt;
+      )}
+    &lt;/<span style="color:#f92672">Authenticator</span>&gt;
+  );
+}
+</code></pre></div><p>Such a login component will then connect with cognito to acces the userpool. <!-- raw HTML omitted -->
+The entire Code is on the GitHub<!-- raw HTML omitted -->
+Once you have created a user in AWS IAM for Amplify and installed the Amplify package you can now use the GraphQL API using</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">graphqlOperation</span>(<span style="color:#a6e22e">getNote</span>, { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">id</span> })
+</code></pre></div><p>The functions used to get the data look like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryGetNote</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">id</span>) =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">note</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">graphql</span>(<span style="color:#a6e22e">graphqlOperation</span>(<span style="color:#a6e22e">getNote</span>, { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">id</span> }));
+  <span style="color:#a6e22e">setNote</span>(<span style="color:#a6e22e">note</span>);
+}
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryListNotes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> () =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">note</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">graphql</span>(<span style="color:#a6e22e">graphqlOperation</span>(<span style="color:#a6e22e">listNotes</span>));
+  <span style="color:#a6e22e">setNote</span>(<span style="color:#a6e22e">note</span>);
+}
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryNewNote</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">content</span>, <span style="color:#a6e22e">author</span>) =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">note</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">graphql</span>(<span style="color:#a6e22e">graphqlOperation</span>(<span style="color:#a6e22e">newNote</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">content</span>, <span style="color:#a6e22e">author</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">author</span>}));
+  <span style="color:#a6e22e">setNote</span>(<span style="color:#a6e22e">note</span>);
+}
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">queryDeleteNote</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">id</span>) =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">note</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">API</span>.<span style="color:#a6e22e">graphql</span>(<span style="color:#a6e22e">graphqlOperation</span>(<span style="color:#a6e22e">deleteNote</span>, { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">id</span> }));
+  <span style="color:#a6e22e">setNote</span>(<span style="color:#a6e22e">note</span>);
+}
+</code></pre></div><p>You can then have this data rendered with the frontend framework of your choice, I&rsquo;m using React. This completes the project I wanted to do, I&rsquo;m already done on Thursday though, so I&rsquo;ll just do other smaller things tomorrow. I put the <a href="https://github.com/KurtSchneider0/frontend-appsync-notes/">frontend</a> and the <a href="https://github.com/KurtSchneider0/cdk-appsync-notes">backend with CDK</a> on GitHub.</p>
+<h1 id="last-day">Last day</h1>
+<p>Today is my last day and I still had time, so I did a few smaller things.</p>
+<h2 id="terraform">Terraform</h2>
+<p>During the internship, I was worked more with AWS CDK, but there is another alternative that often requires much less code. It is called Terraform and I wanted to briefly work with it. I first configured a lambda function for testing, that prints &ldquo;Hello World&rdquo;.</p>
+<p><code>main.tf</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tf" data-lang="tf"><span style="color:#a6e22e">terraform</span> {
+  <span style="color:#a6e22e">required_providers</span> {
+    <span style="color:#a6e22e">aws</span> = {
+      <span style="color:#a6e22e">source</span>  = <span style="color:#e6db74">&#34;hashicorp/aws&#34;</span>
+      <span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;~&gt; 3.27&#34;</span>
+    }
+  }
+
+  <span style="color:#a6e22e">required_version</span> = <span style="color:#e6db74">&#34;&gt;= 0.14.9&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;aws&#34;</span> {
+  <span style="color:#a6e22e">profile</span> = <span style="color:#e6db74">&#34;default&#34;</span>
+  <span style="color:#a6e22e">region</span>  = <span style="color:#e6db74">&#34;eu-central-1&#34;</span>
+}
+</code></pre></div><p><code>lambda.tf</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tf" data-lang="tf"><span style="color:#a6e22e">locals</span> {
+  <span style="color:#a6e22e">lambda_zip_location</span> = <span style="color:#e6db74">&#34;outputs/helloworld.zip&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">data</span> <span style="color:#e6db74">&#34;archive_file&#34;</span> <span style="color:#e6db74">&#34;init&#34;</span> {
+  <span style="color:#a6e22e">type</span>        = <span style="color:#e6db74">&#34;zip&#34;</span>
+  <span style="color:#a6e22e">source_file</span> = <span style="color:#e6db74">&#34;helloworld.py&#34;</span>
+  <span style="color:#a6e22e">output_path</span> = <span style="color:#a6e22e">local</span>.<span style="color:#a6e22e">lambda_zip_location</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_lambda_function&#34;</span> <span style="color:#e6db74">&#34;test_lambda&#34;</span> {
+  <span style="color:#a6e22e">filename</span>      = <span style="color:#a6e22e">local</span>.<span style="color:#a6e22e">lambda_zip_location</span>
+  <span style="color:#a6e22e">function_name</span> = <span style="color:#e6db74">&#34;helloworld&#34;</span>
+  <span style="color:#a6e22e">role</span>          = <span style="color:#a6e22e">aws_iam_role</span>.<span style="color:#a6e22e">lambda_role</span>.<span style="color:#a6e22e">arn</span>
+  <span style="color:#a6e22e">handler</span>       = <span style="color:#e6db74">&#34;helloworld.helloworld&#34;</span>
+
+  <span style="color:#a6e22e">source_code_hash</span> = filebase64sha256(<span style="color:#a6e22e">local</span>.<span style="color:#a6e22e">lambda_zip_location</span>)
+
+  <span style="color:#a6e22e">runtime</span> = <span style="color:#e6db74">&#34;python3.7&#34;</span>
+}
+
+</code></pre></div><p><code>lambda-iam.tf</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tf" data-lang="tf"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_iam_role_policy&#34;</span> <span style="color:#e6db74">&#34;lambda_policy&#34;</span> {
+  <span style="color:#a6e22e">name</span>   = <span style="color:#e6db74">&#34;test_policy&#34;</span>
+  <span style="color:#a6e22e">role</span>   = <span style="color:#a6e22e">aws_iam_role</span>.<span style="color:#a6e22e">lambda_role</span>.<span style="color:#a6e22e">id</span>
+  <span style="color:#a6e22e">policy</span> = file(<span style="color:#e6db74">&#34;iam/lambda-policy.json&#34;</span>)
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;aws_iam_role&#34;</span> <span style="color:#e6db74">&#34;lambda_role&#34;</span> {
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;test_role&#34;</span>
+
+  <span style="color:#a6e22e">assume_role_policy</span> = file(<span style="color:#e6db74">&#34;iam/lambda-assume-policy.json&#34;</span>)
+}
+</code></pre></div><p><code>helloworld.py</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">helloworld</span>(event, context):
+    print(<span style="color:#e6db74">&#34;Hello World&#34;</span>)
+</code></pre></div><p>This can then be easily deployed with <code>terraform apply</code> and destroyed again with <code>terraform destroy</code>.</p>
+<h2 id="posgresql">PosgreSQL</h2>
+<p>I also briefly dove into PosgreSQL again and programmed a schema for a social media application.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> USERS (
+	id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+	first_name TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+	last_name TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+	age INTEGER <span style="color:#66d9ef">DEFAULT</span> <span style="color:#ae81ff">20</span>,
+	email text <span style="color:#66d9ef">UNIQUE</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> POSTS (
+	id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+	title TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+	body text <span style="color:#66d9ef">default</span> <span style="color:#e6db74">&#39;...&#39;</span>,
+	<span style="color:#e6db74">&#34;creatorId&#34;</span> INT <span style="color:#66d9ef">REFERENCES</span> USERS(ID) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> COMMENTS (
+	id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+	message TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+	post_id INT <span style="color:#66d9ef">REFERENCES</span> POSTS(ID),
+	creator_id INT <span style="color:#66d9ef">REFERENCES</span> USERS(ID)
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> FAVORITES (
+	user_id INT <span style="color:#66d9ef">REFERENCES</span> USERS(ID),
+	post_id INT <span style="color:#66d9ef">REFERENCES</span> POSTS(ID),
+	<span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (user_id, post_id)
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> FRIENDS (
+    user_id1 INT <span style="color:#66d9ef">REFERENCES</span> USERS(id),
+    user_id2 INT <span style="color:#66d9ef">REFERENCES</span> USERS(id),
+    <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (user_id1, user_id2)
+);
+
+<span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> POSTS <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> created_at DATE <span style="color:#66d9ef">DEFAULT</span> now() <span style="color:#f92672">-</span> (random() <span style="color:#f92672">*</span> INTERVAL <span style="color:#e6db74">&#39;100 days&#39;</span>);
+
+<span style="color:#75715e">-- FEED
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> P.created_at, P.title, substr(P.body, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">30</span>), U.first_name <span style="color:#66d9ef">FROM</span> POSTS P
+<span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> USERS U <span style="color:#66d9ef">ON</span> P.<span style="color:#e6db74">&#34;creatorId&#34;</span> <span style="color:#f92672">=</span> u.id
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> created_at <span style="color:#66d9ef">desc</span>
+<span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">20</span>;
+</code></pre></div>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/programming">programming</a></li>
+					
+					<li><a href="/tags/reactjs">reactjs</a></li>
+					
+					<li><a href="/tags/graphql">graphql</a></li>
+					
+					<li><a href="/tags/postgresql">postgresql</a></li>
+					
+					<li><a href="/tags/aws">aws</a></li>
+					
+					<li><a href="/tags/cdk">cdk</a></li>
+					
+					<li><a href="/tags/terraform">terraform</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/kurtschneider0" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2022  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

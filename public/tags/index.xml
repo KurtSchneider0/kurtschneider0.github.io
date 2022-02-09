@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Kurt Schneider</title>
+    <link>https://kurtschneider0.github.io/tags/</link>
+    <description>Recent content in Tags on Kurt Schneider</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Feb 2022 17:30:13 +0100</lastBuildDate><atom:link href="https://kurtschneider0.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>math</title>
+      <link>https://kurtschneider0.github.io/tags/math/</link>
+      <pubDate>Fri, 04 Feb 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://kurtschneider0.github.io/tags/aws/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cdk</title>
+      <link>https://kurtschneider0.github.io/tags/cdk/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/cdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graphql</title>
+      <link>https://kurtschneider0.github.io/tags/graphql/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://kurtschneider0.github.io/tags/postgresql/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://kurtschneider0.github.io/tags/programming/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactjs</title>
+      <link>https://kurtschneider0.github.io/tags/reactjs/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/reactjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://kurtschneider0.github.io/tags/terraform/</link>
+      <pubDate>Fri, 28 Jan 2022 17:30:13 +0100</pubDate>
+      
+      <guid>https://kurtschneider0.github.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
