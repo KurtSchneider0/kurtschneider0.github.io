@@ -18,7 +18,7 @@ $$\sum_{k=0}^{\infty}r^k=\lim_{n\rightarrow \infty}\sum_{k=0}^{n}r^k = \lim_{n\r
 
 # Application
 
-The formula that was covered in Math Club was the following $$\sum_{k=1}^{N}\sin(x + \frac{2k}{N}\pi)=0$$ 
+The formula that was covered in math club was the following $$\sum_{k=1}^{N}\sin(x + \frac{2k}{N}\pi)=0$$ 
 We approached the proof first from an induction way of thinking, but that didn't really work out. I then came up with a way of proving it using the formula that I had proven in math class. For that, you have to transform the equation a bit.
 
 $$\sum_{k=1}^{N}\sin(x + \frac{2k}{N}\pi) = \sum_{k=1}^{N} \frac{1}{2i}(e^{ix + 2k/N\pi i} - e^{-ix - 2k/N\pi i})$$ 
