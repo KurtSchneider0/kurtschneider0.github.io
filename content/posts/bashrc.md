@@ -8,7 +8,7 @@ tags: [programming, linux, bash]
 
 ## What is .bashrc
 
-`.bashrc` is a file that lies in your home directory. It executes on terminal bootup and refreshing. It is written in bash. You can use it to customize your terminal in different ways.
+`.bashrc` is a file that is in your home directory. It executes on terminal bootup and refreshing. It is written in bash. You can use it to customize your terminal in different ways.
 
 ## Echo ascii text
 
