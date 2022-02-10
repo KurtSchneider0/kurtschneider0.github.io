@@ -7,17 +7,17 @@ math: false
 tags: [programming, reactjs, graphql, postgresql, aws, cdk, terraform]
 ---
 
-# First day
-## First meeting
+## First day
+### First meeting
 
 Me and Becky first met at 8am to plan the rest of the day. I already had a lot of the programs I needed installed, so that part didn't take long. The plan was for me to set up my own blog site using a framework called Hugo and summarize my first day as a blog. When I'm done with that, I could move on to React.js.
 
-## Hugo
+### Hugo
 
 When we were done with the meeting, I started with Hugo. I used a [Guide](https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7) to learn how to work with Hugo. Hugo can be installed easily with the package manager Chocolatey. You can create a website with a few commands using a template of choice. This website can be further configured in config.toml. There you define things like the author, description and others. This website can then be hosted on a local server or on e.g. Github Pages. When hosting on Github Pages I had a bug where the CSS was not imported correctly. However, we discussed this in the second meeting and fixed it later by changing the path for importing the CSS.
 After that everything worked fine.
 
-## React
+### React
 
 When I was done with Hugo and had the website up and running, I moved on to React.js. React.js is a component-based javascript front-end library. React makes it easier to build user interfaces.
 
@@ -167,8 +167,8 @@ function calculateWinner(squares) {
   return null;
 }
 ```
-# Second day
-## Github Actions
+## Second day
+### Github Actions
 
 First, I learned what [GitHub Actions](https://www.plainconcepts.com/what-is-github-actions/) is and then automated the build and deploy process with Github Actions using a [Guide](https://dev.to/importhuman/deploy-hugo-website-using-github-pages-1mc5) for the website I created with Hugo. However, I ran into a few problems with that and continued with React for now, but I still tried a simpler workflow that outputs something to the terminal on a push.
 
@@ -196,13 +196,12 @@ jobs:
           echo test, and deploy your project.
 ```
 
-## React
+### React
 
 I then expanded my React knowledge a bit and tried Forms, programmed a todo list and read data from an [API](https://randomuser.me/) with React. The source code for this is on my [GitHub](https://github.com/KurtSchneider0/ReactjsTests).
 
-# Third day
+## Third day
 
-## GraphQL
 
 ### HTTP and APIs
 
@@ -213,15 +212,15 @@ First, I took another look at [HTTP Requests](https://developer.mozilla.org/en-U
 After that I went through a [GraphQL Basics Tutorial](https://www.howtographql.com/). With this knowledge I then worked on a [Fullstack GraphQL Tutorial](https://www.howtographql.com/react-apollo/0-introduction/) where I reprogrammed a [Hackernews](https://news.ycombinator.com/) clone ([GitHub Repository](https://github.com/KurtSchneider0/Hackernews-React-Apollo)).
 However, I had a bug with node and stopped a bit programming on that project.
 
-## NASA API
+### NASA API
 
 When I was looking into APIs, I also came across the [NASA API](https://api.nasa.gov/). I then used the API to make a small [website](https://kurtschneider0.github.io/nasa-api/) that outputs the photo of the day, 5 asteroids near Earth, and 5 photos of the Mars rovers ([GitHub Repository](https://github.com/KurtSchneider0/nasa-api)).
 
-# Fourth day
+## Fourth day
 
-## GitHub Actions
+### GitHub Actions
 
-### Blog website
+#### Blog website
 
 The first thing I did was to continue working with GitHub Actions. So I tried again to set up a workflow for the blog site and this time I was able to do it. This is the .yml file for the workflow.
 
@@ -260,7 +259,7 @@ jobs:
 
 Dieser Workflow baut die Website mit 'hugo --minify' und deployt dann die in `./public` gebaute Website zu GitHub Pages.
 
-### NASA API
+#### NASA API
 
 This workflow builds the website with 'hugo --minify' and then deploys the website built in `./public` to GitHub Pages.
 
@@ -301,31 +300,31 @@ jobs:
 
 The workflow simply builds the React project and then lets you host the built website from the `./build` folder via GitHub Pages.
 
-## Cloud Computing
+### Cloud Computing
 
 I also had a quick read through what [cloud computing](https://aws.amazon.com/de/what-is-cloud-computing) to prepare for the next day.
 
-## GraphQL
+### GraphQL
 
 I then also fixed the GraphQL bug by using a different node version to start the server. I have then completed half of the GraphQL tutorial.
 
-# Fifth day
+## Fifth day
 
-## AWS
+### AWS
 
 First, I watched an introduction to the AWS Cloud. Then I watched two short tutorials from AWS's Getting Started page. The first one involved creating a [Lambda Function](https://aws.amazon.com/de/getting-started/hands-on/run-serverless-code/) to run a serverless "Hello World" program. The second one has [Face Rekognition](https://aws.amazon.com/de/getting-started/hands-on/detect-analyze-compare-faces-rekognition) to analyze and compare faces.
 
-## GraphQL
+### GraphQL
 
 I also finished the Hackernews clone after that ([GitHub repository](https://github.com/KurtSchneider0/Hackernews-React-Apollo)).
 
-## Retrospective
+### Retrospective
 
 I was also briefly present at a retrospective today, where I also briefly introduced myself to the other employees.
 
-# Sixth day
+## Sixth day
 
-## Cloudformation
+### Cloudformation
 
 First, I briefly reviewed [IaC](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac#overview). Then I looked into [Cloudformation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) and did a [workshop](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) on it. Cloudformation is a way to use yml templates to configure stacks that then contain multiple AWS services. This is a simple Cloudformation template that creates and configures a stack with an S3 bucket.
 
@@ -345,9 +344,9 @@ Resources:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: AES256
 ```
-# Seventh day
+## Seventh day
 
-## AWS CDK
+### AWS CDK
 
 Then I did some quick research on what [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html) is. AWS CDK is a way to configure similar to stacks. However, for CDK you use programming languages like TypeScript, where the code is turned into a cloudformation template that is then deployed.
 
@@ -390,14 +389,14 @@ exports.handler = async function (event) {
 The stack in the example would create a new lambda function that outputs "Hello, CDK! You've hit" + the addressed endpoint. Then an API gateway is defined so that the Lambda function is executed when an endpoint of that API is accessed. The stack can now be easily deployed with 'cdk deploy'.
 ![Illustration](../../images/internship/simpleapi.png)
 
-# Eighth day
-## Serverless
+## Eighth day
+### Serverless
 
 Today I have looked at [Serverless](https://aws.amazon.com/de/lambda/serverless-architectures-learn-more/). For this, I first looked at various explanations such as on [Serverlessland](https://serverlessland.com/learn). To summarize, Servless means that applications automatically scale and add capacity on demand. This allows one to focus more on buisness logic.
 
 I then started using the [Serverless Workshop](https://superluminar-io.github.io/serverless-workshop/).
 
-## GraphQL
+### GraphQL
 
 In the GraphQL Hackernews clone, I imported the server with schema and database, so I wanted to briefly try making my own little GraphQL server with [Apollo](https://www.apollographql.com/) and [Prisma](https://www.prisma.io/). I decided to make a small API that allows you to create and retrieve notes, which are then stored in a database. The scheme for this is very simple.
 
@@ -468,41 +467,41 @@ model Note {
 }
 ```
 
-# Ninth day
+## Ninth day
 
 Today was also my first day in presence at superluminar.
 
-## Serverless
+### Serverless
 
 I have finished the Serverless Workshop. In the workshop they made a REST API where you can add and read notes stored in a DynamoDB database.
 ![Illustration](../../images/internship/simpleapidatabase.png)
 
-## Hugo Theme
+### Hugo Theme
 
 I also made my own little Hugo theme ([GitHub](https://github.com/KurtSchneider0/colorful-theme)).
 
-## GraphQL AppSync
+### GraphQL AppSync
 
 After that I started an [AppSync Workshop](https://superluminar-io.github.io/serverless-graphql-workshop/#/). In which I create a GraphQL API in AWS.
 
-# Tenth day
+## Tenth day
 
-## GraphQL AppSync
+### GraphQL AppSync
 
 I have finished the GraphQL API from the workshop. One can use the API to create an article and write a comment. Articles can be written only if one has an account that is in the Blogger group on AWS Cognito. Comments are also checked for inappropriate emojis using the input checker. Articles and comments are also stored in DynamoDB databases.
 ![Illustration](../../images/internship/graphqlblogapi.png)
 
-## Final project
+### Final project
 
 I also thought about the project I want to do in the last week. For this I have read through parts of the documentation for CDK.
 
-# Final project
+## Final project
 
 For the last week the plan was that I will work on a smaller project on my own based on what I already learned and research. I decided to create a notes GraphQL API using AppSync and using Amplify frontend, DynamoDB as database and Cognito for the login system. Amplify provides pre-built UI components that can interact with the API, which cann then also be used on a custom website. I wanted to do the infrastructure for this with CDK.
 
 ![Illustration](../../images/internship/finalproject.png)
 
-## CDK
+### CDK
 
 The first two days I spent setting up everything except the frontend with CDK for which I defined the resources in `cdk-final-project-stack.ts`.
 ```ts
@@ -660,7 +659,7 @@ export default createNote
 
 This Lambda function creates a note using the DynamoDB client that can access the database.
 
-## Amplify
+### Amplify
 
 Now the API, Database and Userpool works, but I need to program the frontend, because at the moment you can only interact with the API over the AWS Console.<br> 
 To do that I create a react app using `npm create react-app frontend`. I'm then configuring Amplify in `index.js`.
@@ -724,11 +723,11 @@ const queryDeleteNote = async (id) => {
 
 You can then have this data rendered with the frontend framework of your choice, I'm using React. This completes the project I wanted to do, I'm already done on Thursday though, so I'll just do other smaller things tomorrow. I put the [frontend](https://github.com/KurtSchneider0/frontend-appsync-notes/) and the [backend with CDK](https://github.com/KurtSchneider0/cdk-appsync-notes) on GitHub.
 
-# Last day
+## Last day
 
 Today is my last day and I still had time, so I did a few smaller things.
 
-## Terraform
+### Terraform
 
 During the internship, I was worked more with AWS CDK, but there is another alternative that often requires much less code. It is called Terraform and I wanted to briefly work with it. I first configured a lambda function for testing, that prints "Hello World".
 
@@ -799,7 +798,7 @@ def helloworld(event, context):
 
 This can then be easily deployed with `terraform apply` and destroyed again with `terraform destroy`.
 
-## PosgreSQL
+### PosgreSQL
 
 I also briefly dove into PosgreSQL again and programmed a schema for a social media application.
 
