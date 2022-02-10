@@ -11,7 +11,7 @@ tags: [math]
 I was doing a little work on the geometric series in class today, and then found a nice application for it in math club. The post summarizes it. 
 
 In math class I dealt with the two formulas 
-$$\sum_{k=0}^{n}r^k=\frac{1-r^{n+1}}{1-r}$$ und $$\sum_{k=0}^{\infty}r^k=\frac{1}{1-r},|r|<1.$$ The first can be proved by induction. The inductionstep looks like this. $$\sum_{k=0}^{n+1}r^k=\sum_{k=0}^{n}r^k + r^{n+1}=\frac{1-r^{n+1}}{1-r} + r^{n+1} = \frac{1-r^{n+1} + (1-q)r^{n+1}}{1-r} = \frac{1-r^{n+1} + r^{n+1} - r^{n+2}}{1-r} $$
+$$\sum_{k=0}^{n}r^k=\frac{1-r^{n+1}}{1-r}$$ and $$\sum_{k=0}^{\infty}r^k=\frac{1}{1-r},|r|<1.$$ The first can be proved by induction. The inductionstep looks like this. $$\sum_{k=0}^{n+1}r^k=\sum_{k=0}^{n}r^k + r^{n+1}=\frac{1-r^{n+1}}{1-r} + r^{n+1} = \frac{1-r^{n+1} + (1-q)r^{n+1}}{1-r} = \frac{1-r^{n+1} + r^{n+1} - r^{n+2}}{1-r} $$
 $$= \frac{1 - r^{n+2}}{1-r}.$$
 
 The second formula can then be proven with the first one like this. 
