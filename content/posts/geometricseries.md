@@ -1,6 +1,6 @@
 ---
 math: true
-title: Geometric series
+title: The geometric series and an application
 description: This is a post about the geometric series and an interesting application of it.
 date: 2022-02-04 17:30:13 +0100
 draft: false
