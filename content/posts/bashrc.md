@@ -75,5 +75,5 @@ You can also add an attribute to the color tag, which will style the text. That 
 
 I customized my prompt with 
 ```bash
-PS1="\[\033[34m\]\u\[\033[1;32m\]@\[\033[0;34m\]\h:\[\033[1;34m\]\w\[\033[0;37m\]\$ "
+PS1="\[\033[34m\]\u\[\033[1;34m\]@\[\033[0;34m\]\h:\[\033[1;34m\]\w\[\033[0;37m\]\$ "
 ```
