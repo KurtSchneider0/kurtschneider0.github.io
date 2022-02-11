@@ -27,11 +27,14 @@ $$= \frac{1}{2i}(\sum_{k=1}^{N} e^{ix}\sum_{k=1}^{N} e^{2k\pi i/N} - \sum_{k=1}^
 
 Now you really only have to prove that
 
-$$\sum_{k=1}^{N} e^{2k\pi i/N}=0$$ und $$\sum_{k=1}^{N} e^{-2k\pi i/N}=0$$
+$$\sum_{k=1}^{N} e^{2k\pi i/N}=0$$ and $$\sum_{k=1}^{N} e^{-2k\pi i/N}=0$$
 
 Here you can use the geometric series, because
 
 $$\sum_{k=1}^{N} e^{2k\pi i/N} = \sum_{k=0}^{N-1} (e^{2\pi i/N})^k = \frac{1-(e^{2\pi i/N})^N}{1-e^{2\pi i/N}} = \frac{1-(e^{2\pi iN/N})}{1-e^{2\pi i/N}} = \frac{1-(e^{2\pi iN/N})}{1-e^{2\pi i/N}}=\frac{1-1}{1-e^{2\pi i/N}}$$
 $$=\frac{0}{1-e^{2\pi i/N}} = 0$$ 
+
+But now 
+$$\sum_{k=1}^{N} e^{-2k\pi i/N}=\overline{\sum_{k=1}^{N} e^{2k\pi i/N}}=\overline{0}=0$$
 
 and the formula is proven.
