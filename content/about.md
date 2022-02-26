@@ -4,8 +4,7 @@ title: About
 
 ## General
   - I'm a student at [Gymnasium Lerchenfeld](https://gyle.de) <br>
-  - I'm really interested in Mathematics, Physics and Computer Science <br>
-  - I have basic knowledge in AWS, Analysis, Classical Physics, Cryptography, CyberSecurity, CSS, GitHub, GraphQL, Group Theory, HTML, JavaScript, PostgreSQL, Python, React Native, React.js, Terraform, bash, discord.py, node.js <br>
+  - I'm really interested in Mathematics, Physics and Computer Science <br> <!-- - I have basic knowledge in AWS, Analysis, Classical Physics, Cryptography, CyberSecurity, CSS, GitHub, GraphQL, Group Theory, HTML, JavaScript, PostgreSQL, Python, React Native, React.js, Terraform, bash, discord.py, node.js <br>-->
   - I'm currently learning about Category theory, Topology and Quantum Theory
 
 ## Projects
