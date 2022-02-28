@@ -10,7 +10,7 @@ tags: [programming, reactjs, graphql, postgresql, aws, cdk, terraform]
 ## First day
 ### First meeting
 
-Me and Becky first met at 8am to plan the rest of the day. I already had a lot of the programs I needed installed, so that part didn't take long. The plan was for me to set up my own blog site using a framework called Hugo and summarize my first day as a blog. When I'm done with that, I could move on to React.js.
+Becky and I first met at 8am to plan the rest of the day. I already had a lot of the programs I needed installed, so that part didn't take long. The plan was for me to set up my own blog site using a framework called Hugo and summarize my first day as a blog. When I'm done with that, I could move on to React.js.
 
 ### Hugo
 
